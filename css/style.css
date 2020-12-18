@@ -3,7 +3,11 @@
     box-sizing: border-box;
     color: #666;
 }
-
+body {
+    margin: 0;
+    min-width: 100%;
+    min-height: 100%;
+  }
 
 /* Header/logo tiêu đề */
 
@@ -15,7 +19,6 @@ header {
     height: 120px;
 }
 
-
 /* Tăng kích thước font chữ cho header */
 
 header h1 {
@@ -24,8 +27,9 @@ header h1 {
 
 header h1,
 h2,
-h3 {
-    color: white;
+h3 ,
+h4{
+    color:black;
 }
 
 section {
@@ -99,22 +103,74 @@ li.dropdown {
 .hideable-section:first-of-type {
     display: block;
 }
+
+/* Create three unequal columns that floats next to each other */
 .column {
     float: left;
-    width: 25%;
     padding: 10px;
   }
+  
+  /* Left and right column */
+  .column.side {
+    width: 10%;
+    height:100%;
+    text-align: center;
+    background-color: #e9ec08;
+  }
+  
+  /* Middle column */
+  .column.middle {
+    width: 80%;
+    height: 100%;
+    text-align: center;
+  }
+  
+  /* Clear floats after the columns */
   .row:after {
     content: "";
     display: table;
     clear: both;
   }
-  @media screen and (max-width: 900px) {
-    .column  {
-      width: 50%;
-    }
-  }
+  
+  /* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
   @media screen and (max-width: 600px) {
-    .column  {
+    .column.side, .column.middle {
       width: 100%;
     }
+  }
+  /* Style the footer */
+footer {
+    background: #1abc9c;
+    padding: 10px;
+    text-align: center;
+    bottom: 0;
+  }
+
+  .gallery {
+    border: 1px solid #ccc;
+  }
+  
+  .gallery:hover {
+    border: 1px solid #777;
+  }
+  
+  .gallery img {
+    width: 100%;
+    height: auto;
+  }
+  
+  .desc {
+    padding: 15px;
+    text-align: center;
+  }
+  
+  .responsive {
+    padding: 0 6px;
+    float: left;
+    width: 24.99999%;
+  }
+  .clearfix:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
